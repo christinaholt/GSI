@@ -18,7 +18,9 @@ fi
 
 
 # Initialize and load modules
-if [[ -d /dcom && -d /hwrf ]] ; then
+if [[ $PLATFORM == "aws" ]] ; then
+    target=aws
+elif [[ -d /dcom && -d /hwrf ]] ; then
     . /usrx/local/Modules/3.2.10/init/sh
     target=wcoss
     . $MODULESHOME/init/sh
