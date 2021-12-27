@@ -98,7 +98,8 @@ elif [ $target = acorn ]; then
     module load modulefile.ProdGSI.$target
 else 
     module purge
-    source $dir_modules/modulefile.ProdGSI.$target
+    module use $dir_modules
+    module load modulefile.ProdGSI.$target
 fi
 
 if [ $build_type = PRODUCTION -o $build_type = DEBUG ] ; then
@@ -113,7 +114,7 @@ fi
 if [ $mode = NCO ]; then
     make VERBOSE=1 -j 8
 else
-    make -j 8
+    make VERBOSE=1 -j 8 
 fi
 rc=$?
 
