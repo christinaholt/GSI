@@ -12,7 +12,7 @@ setenv CRTM_FIX /home/ubuntu/JCSDA_CRTM/fix
 
 
 # Load hpc-stack
-module use /opt/hpc-stack/modulefiles/stack
+module use -a /shared/apps/hpc-stack/modulefiles/stack
 module load hpc/1.2.0
 # Load intel compiler and mpi
 module load hpc-intel
